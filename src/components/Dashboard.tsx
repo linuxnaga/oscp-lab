@@ -30,6 +30,7 @@ import { FLASHCARDS } from "@/data/flashcards";
 import { QUESTIONS } from "@/data/questions";
 import { ACHIEVEMENTS, completedLabIds, correctQuestionCount, domainMastery, rankProgress } from "@/lib/gamification";
 import { cn, timeAgo } from "@/lib/util";
+import { BackupControls } from "./BackupControls";
 import { SkillRadar } from "./SkillRadar";
 import { Card, DOMAIN_COLOR, ProgressBar, SectionTitle } from "./ui";
 
@@ -205,6 +206,12 @@ export function Dashboard() {
         <QuickLink href="/flashcards" icon={<Brain className="h-4 w-4" />} label={`Review ${dueCards} due cards`} />
         <QuickLink href="/exam-bank" icon={<BookOpenCheck className="h-4 w-4" />} label="Practise exam questions" />
       </div>
+
+      {/* The sidebar (with backup controls) is hidden on small screens. */}
+      <Card className="p-4 lg:hidden">
+        <SectionTitle icon={<Shield className="h-3.5 w-3.5" />}>Backup</SectionTitle>
+        <BackupControls />
+      </Card>
     </div>
   );
 }

@@ -2,12 +2,35 @@
 
 A gamified OSCP (PEN-200) preparation web app: an operator dashboard, a 200-lab command center, SM-2 spaced-repetition flashcards and a scenario-based exam question bank. Everything runs in the browser, and progress is saved to `localStorage`.
 
-## Quick start
+## Quick start (step by step)
 
-```bash
-npm install
-npm run dev        # http://localhost:3000
-```
+1. **Install Node.js 18.17+** (20 or 22 LTS recommended). Check it with `node -v`.
+2. **Clone the repo:**
+   ```bash
+   git clone https://github.com/linuxnaga/oscp-lab.git
+   cd oscp-lab
+   ```
+3. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+4. **Start the app:**
+   ```bash
+   npm run dev
+   ```
+5. **Open http://localhost:3000.** Click **Resume LAB-001** on the dashboard to start your first lab.
+
+For a production build: `npm run build && npm start`.
+
+## Documentation
+
+| Guide | What's in it |
+| --- | --- |
+| [1. Getting started](docs/01-getting-started.md) | Prerequisites, install, dev and production runs, LAN access, troubleshooting |
+| [2. User guide](docs/02-user-guide.md) | A 10-minute first-session walkthrough and step-by-step use of all four modules and shortcuts |
+| [3. Progress & backup](docs/03-progress-and-backup.md) | XP, ranks, streaks, achievements, Export/Import/Reset, backup file format, how SM-2 scheduling works |
+| [4. Extending the content](docs/04-extending-content.md) | How the 200-lab generator works, and recipes for adding techniques, flagship labs, flashcards, questions and achievements |
+| [5. Architecture](docs/05-architecture.md) | Folder layout, state flow, `useOscpStore` API, design tokens, deployment |
 
 Other scripts:
 
